@@ -6,4 +6,4 @@ cd prox
 
 git pull
 
-python prox.py
+python run.py
