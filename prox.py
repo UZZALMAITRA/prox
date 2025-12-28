@@ -1,9 +1,14 @@
-import prox
+import source  # এখানে .so ফাইলের নাম (এক্সটেনশন ছাড়া)
+import os
+import sys
+
+# Bytecode (pyc) তৈরি বন্ধ রাখা (Optional)
+sys.dont_write_bytecode = True
 
 if __name__ == "__main__":
     try:
-        prox.main()
-    except ImportError:
-        print("Error: prox.so file not found or incompatible architecture!")
+        # source.so এর ভেতর থেকে start_tool ফাংশন কল করা হচ্ছে
+        source.start_tool()
     except Exception as e:
-        print(f"An error occurred: {e}")
+        # কোনো এরর হলে সাইলেন্টলি এক্সিট
+        pass
